@@ -17,6 +17,13 @@ defmodule AlexaAudioMgtWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/users", UserController
+  end
+
+  scope "/audio", AlexaAudioMgtWeb.Audio, as: :audio do
+    pipe_through :browser
+
+    resources "/media", MediaController
   end
 
   # Other scopes may use custom stacks.

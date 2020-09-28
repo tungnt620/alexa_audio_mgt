@@ -1,0 +1,18 @@
+<h1>Show Media</h1>
+
+<ul>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @media.link %>
+  </li>
+
+  <li>
+    <strong>Mp3 link:</strong>
+    <%= @media.mp3_link %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.audio_media_path(@conn, :edit, @media) %></span>
+<span><%= link "Back", to: Routes.audio_media_path(@conn, :index) %></span>

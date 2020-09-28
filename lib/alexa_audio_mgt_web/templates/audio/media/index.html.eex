@@ -1,0 +1,28 @@
+<h1>Listing Media</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Mp3 link</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for media <- @media do %>
+    <tr>
+      <td><%= media.link %></td>
+      <td><%= media.mp3_link %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.audio_media_path(@conn, :show, media) %></span>
+        <span><%= link "Edit", to: Routes.audio_media_path(@conn, :edit, media) %></span>
+        <span><%= link "Delete", to: Routes.audio_media_path(@conn, :delete, media), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Media", to: Routes.audio_media_path(@conn, :new) %></span>
